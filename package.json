@@ -1,0 +1,23 @@
+{
+  "name": "koa-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".deploay/run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Richardend/koa-news.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Richardend/koa-news/issues"
+  },
+  "homepage": "https://github.com/Richardend/koa-news#readme",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-route": "^3.2.0"
+  }
+}

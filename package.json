@@ -4,7 +4,9 @@
   "description": "",
   "main": ".deploay/run.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "./node_modules/.bin/babel-node --inspect --presets env --debug .deploy/run",
+    "dev": "nodemon --exec npm run debug"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,16 @@
   },
   "homepage": "https://github.com/Richardend/koa-news#readme",
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
     "koa": "^2.5.0",
-    "koa-route": "^3.2.0"
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }

@@ -1,0 +1,43 @@
+npm install -g eslint
+npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
+
+
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "Babel": true,
+    "React": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "global-require": "off",
+    "import/no-unresolved": "off",
+    "no-underscore-dangle": "off",
+    "no-new-func": "off",
+    "no-param-reassign": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-multi-comp": "off",
+    "react/jsx-no-bind": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-first-prop-new-line": "off",
+    "react/jsx-filename-extension": "off",
+    "no-restricted-syntax": "off"
+  }
+}
+
+
+vscode
+F1->install Extensions，选择 ESLint 即可
+
+sublime text3
+install pacakge，选择 SublimeLinter
+install pacakge，选择 SublimeLinter-contrib-eslint
+SublimeLinter: Enable Linter

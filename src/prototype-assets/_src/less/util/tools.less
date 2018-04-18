@@ -1,0 +1,155 @@
+
+//px 2 rem
+.px2rem(@name, @px,@size:1) {
+    @{name}: @px / @baseFontSize * @size*1rem;
+}
+//**********
+.px2remattr(@name,@val,@attr) {
+    @{name}: @val / @baseFontSize * 1rem @attr;
+}
+
+//set padding px 2 rem
+.setPadding(@top, @right,@bottom,@left,@size:1) {
+  padding: @top / @baseFontSize *1rem @right / @baseFontSize *1rem @bottom / @baseFontSize *1rem @left / @baseFontSize *1rem;
+}
+
+//px+2 2 rem
+.px2rem2step(@name, @px,@size:1) {
+    @{name}: (@px+2) / @baseFontSize *@size* 1rem;
+}
+
+//set padding px+2 2 rem
+.setPadding2Step(@top, @right,@bottom,@left) {
+  .px2rem2step(padding-left, @left);
+  .px2rem2step(padding-right, @right);
+  .px2rem2step(padding-top, @top);
+  .px2rem2step(padding-bottom, @bottom);
+}
+
+//set margin px 2 rem
+.setMargin(@top, @right,@bottom,@left) {
+  margin: @top / @baseFontSize *1rem @right / @baseFontSize *1rem @bottom / @baseFontSize *1rem @left / @baseFontSize *1rem;
+}
+
+//set box shadow
+.boxShadow(@para) {
+  box-shadow: 0 0 @para @BlackLight;
+}
+
+.paddingLR(@left:30,@right:30){
+  .px2rem(padding-left,@left);
+  .px2rem(padding-right,@right);
+}
+.paddingTB(@top:30,@bottom:30){
+  .px2rem(padding-top,@top);
+  .px2rem(padding-bottom,@bottom);
+}
+
+
+// set rotate deg
+.rotate(@deg) {
+  transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+}
+
+// set the attr full of navigator
+.pre(@style,@value) {
+  -webkit-@{style}: @value;
+  -moz-@{style}: @value;
+  -ms-@{style}: @value;
+    @{style}: @value;
+}
+
+//set opacity
+.maxinOpacity(@val) {
+  -moz-opacity: @val;
+  -khtml-opacity: @val;
+  opacity: @val;
+  zoom: 1;
+}
+
+//********************
+.borderRadius(@radius) {
+  .pre(border-radius,  @radius / @baseFontSize *1rem);
+}
+
+.animation(@value) {
+  .pre(animation, @value);
+}
+
+.transition(@arg) {
+  .pre(transition, @arg);
+}
+
+.boxShadow(@shadow) {
+  .pre(box-shadow, @shadow);
+}
+
+.BcRgba(@opacty){
+  background-color: rgba(0,0,0,@opacty);
+}
+.CRgba(@opacty){
+  color: rgba(0,0,0,@opacty);
+}
+
+.background-rgba(@r,@g,@b,@a) {
+  @c: rgba(@r, @g, @b, @a);
+  @c2: argb(@c);
+  /* for IE9 IE8 IE7 not sure about IE6*/
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='@{c2}', endColorstr='@{c2}')";
+  background-color: @c;
+  root & { /*
+  * IE9 由于rgba和filter都支持，会导致两个颜色叠加，使用hack去除
+  * \9 代表 IE9 以下浏览器支持
+  * :root 只有 IE9+ 以及其他现代浏览器支持
+  * IE10 以上不再支持 filter
+  */
+    filter:  none;
+  }
+}
+
+//rgba创建兼容IE的rgba
+.rgba(@t,@r,@g,@b,@a){
+    @{t}: rgba(@r,@g,@b,@a);
+}
+.triangle(@width,@rgba){
+  .px2remattr(border-left,@width,solid transparent);
+  .px2remattr(border-right,@width,solid transparent);
+  .px2remattr(border-top,@width,solid @rgba);
+}
+
+.backgroundposition(@x,@y){
+  .px2rem(background-position-x,@x,2);
+  .px2rem(background-position-y,@y,2);
+}
+
+.backgroundsize(@val){
+  .px2remattr(background-size,@val,auto);
+}
+
+
+//rgba创建兼容IE的rgba
+.rgba(@t,@r,@g,@b,@a){
+    @{t}: rgba(@r,@g,@b,@a);
+}
+
+
+.triangle(@width,@rgba){
+  .px2remattr(border-left,@width,solid transparent);
+  .px2remattr(border-right,@width,solid transparent);
+  .px2remattr(border-top,@width,solid @rgba);
+}
+
+.backgroundposition(@x,@y){
+  .px2rem(background-position-x,@x,2);
+  .px2rem(background-position-y,@y,2);
+}
+
+.backgroundsize(@val){
+  .px2remattr(background-size,@val,auto);
+}
+
+.rect(@top, @right, @bottom, @left){
+  clip: rect( @top / @baseFontSize *1rem, @right / @baseFontSize *1rem, @bottom / @baseFontSize *1rem, @left / @baseFontSize *1rem);
+}

@@ -1,18 +1,18 @@
 {
-  "name": "koa-news",
+  "name": "prototypes",
   "version": "1.0.0",
   "description": "",
   "main": ".deploay/run.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "./node_modules/.bin/babel-node --inspect --presets env --debug .deploy/run",
+    "debug": "babel-node --inspect --presets env --debug .deploy/run",
     "dev": "nodemon --exec npm run debug"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Richardend/koa-news.git"
   },
-  "author": "",
+  "author": "hailiangli@sina.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Richardend/koa-news/issues"

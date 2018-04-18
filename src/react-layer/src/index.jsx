@@ -7,7 +7,8 @@ class View extends React.Component {
     }
 
     divClick() {
-        console.log('hehehaha');
+        let con = '1';
+        console.log(`${con}_hehe`);
     }
 
     render() {

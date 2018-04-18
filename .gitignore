@@ -1,5 +1,15 @@
 #node
-node_modules/
+node_modules
 package-lock.json
-.idea/
+.idea
 .idea/*.*
+
+#react-layer
+src/react-layer/dest
+src/react-layer/dist
+src/react-layer/node_modules
+
+#prototype-assets
+src/prototype-assets/dist
+src/prototype-assets/dest
+src/prototype-assets/node_modules

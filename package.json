@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "babel-node --inspect --presets env --debug .deploy/run",
-    "dev": "nodemon --exec npm run debug"
+    "dev": "nodemon --ignore react-layer/ --ignore prototype-assets/ --exec npm run debug"
   },
   "repository": {
     "type": "git",

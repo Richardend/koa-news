@@ -1,14 +1,11 @@
-//
-   Created by mrlee on 2018/4/18.
-
 doctype html
 
 html(lang="en")
     include ../shared/header.jade
+    link(rel="stylesheet", href="../../css/shared/public.css")
     block linkBody
     body
-        #main
-            .main-frame
-                .main-viewport
-                    block mainBody
-                .main-state#main_state
+        div#main
+            .main-viewport
+                block mainBody
+            .main-state#main_state

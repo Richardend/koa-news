@@ -38,3 +38,10 @@ gulp.task('less', () => {
 })
 
 gulp.task('default', ['jade', 'less']);
+gulp.task('watch', ['jade', 'less'], (cb) => {
+    gulp.watch(paths.jade.src, ['jade']);
+    gulp.watch(paths.less.src, ['less']);
+    cb();
+});
+
+

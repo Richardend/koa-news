@@ -6,27 +6,24 @@ let path = require('path');
 
 //let BASE_PATH = path.resolve(__dirname, '../');
 let DEST_PATH = path.resolve(__dirname, '../dest');
-
+let entryConfig = require('./entry.config');
+const CleanPlugin = require('clean-webpack-plugin');
 const webpackConfig = {
     devtool: 'cheap-module-source-map',
-    /**
-     * 不管用何种结构定义entry, 都要指向确定的文件.
-     * */
-    entry: './src/index.jsx',
+    entry: entryConfig,
     output: {
         path: DEST_PATH,
-        filename: 'app.bundle.js'
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    /*
     externals: [
         {
-            'react': true,
-            'react-dom': true
+            //'react': true,
+            //'react-dom': true
         }
-    ],*/
+    ],
     module: {
         rules: [
             {
@@ -43,6 +40,33 @@ const webpackConfig = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                common: {
+                    chunks: 'initial',
+                    name: 'common',
+                    minChunks: 2,
+                    maxInitialRequests: 5,
+                    minSize: 0
+                },
+                vendor: {
+                    test: /node_modules/,
+                    chunks: 'initial',
+                    name: 'vendor',
+                    priority: 10,
+                    enforce: true
+                }
+            }
+        }
+    },
+    plugins: [
+        new CleanPlugin(['*.*'], {
+            root: path.resolve(__dirname, '../dest'),
+            verbose: true,
+            dry: false
+        })
+    ],
     mode: 'development'
 }
 

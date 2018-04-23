@@ -2,6 +2,17 @@
 @import "../util/variable";
 
 .view-container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width:100%;
+  height:100%;
+  .news-detail-header {
+    text-align: center;
+    position: relative;
+    .px2rem(line-height, 40);
+    .setPadding(24, 0, 24, 0);
+  }
+  .htlf-toLeft {
+    position: absolute;
+    top:0;
+    left:0;
+  }
 }
